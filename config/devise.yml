@@ -1,0 +1,10 @@
+development:
+  mailer_sender: 'info@oandaservice-development.herokuapp.com'
+backtest:
+  mailer_sender: 'info@oandaservice-backtest.herokuapp.com'
+test:
+  mailer_sender: 'info@oandaservice-test.herokuapp.com'
+production:
+  mailer_sender: 'info@oandaservice.herokuapp.com'
+staging:
+  mailer_sender: 'info@oandaservice-staging.herokuapp.com'

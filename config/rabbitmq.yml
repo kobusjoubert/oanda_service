@@ -1,0 +1,25 @@
+development:
+  url_publisher: amqp://guest:guest@localhost:5672
+  url_consumer: amqp://guest:guest@localhost:5672
+  workers_per_cpu: <%= ENV.fetch("RABBIT_WORKERS_PER_CPU") { 1 } %>
+  worker_threads_per_cpu: <%= ENV.fetch('RABBIT_WORKER_THREADS_PER_CPU') { 2 } %>
+backtest:
+  url_publisher: amqp://guest:guest@localhost:5672
+  url_consumer: amqp://guest:guest@localhost:5672
+  workers_per_cpu: <%= ENV.fetch("RABBIT_WORKERS_PER_CPU") { 1 } %>
+  worker_threads_per_cpu: <%= ENV.fetch('RABBIT_WORKER_THREADS_PER_CPU') { 2 } %>
+test:
+  url_publisher: amqp://guest:guest@localhost:5672
+  url_consumer: amqp://guest:guest@localhost:5672
+  workers_per_cpu: <%= ENV.fetch("RABBIT_WORKERS_PER_CPU") { 1 } %>
+  worker_threads_per_cpu: <%= ENV.fetch('RABBIT_WORKER_THREADS_PER_CPU') { 2 } %>
+production:
+  url_publisher: <%= ENV['CLOUDAMQP_URL'] %>
+  url_consumer: <%= ENV['CLOUDAMQP_URL'] %>
+  workers_per_cpu: <%= ENV.fetch("RABBIT_WORKERS_PER_CPU") { 2 } %>
+  worker_threads_per_cpu: <%= ENV.fetch('RABBIT_WORKER_THREADS_PER_CPU') { 5 } %>
+staging:
+  url_publisher: <%= ENV['CLOUDAMQP_URL'] %>
+  url_consumer: <%= ENV['CLOUDAMQP_URL'] %>
+  workers_per_cpu: <%= ENV.fetch("RABBIT_WORKERS_PER_CPU") { 2 } %>
+  worker_threads_per_cpu: <%= ENV.fetch('RABBIT_WORKER_THREADS_PER_CPU') { 5 } %>
